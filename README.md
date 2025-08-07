@@ -1,4 +1,4 @@
-# projeto_perguntas
+# Quiz APP using Flutter Framework
 
 A new Flutter project.
 
