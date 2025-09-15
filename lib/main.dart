@@ -106,10 +106,32 @@ class _QuestionAppState extends State<QuestionApp> {
                   } else if (snapshot.hasData) {
                     _questions = snapshot.data!;
                     return hasMoreQuestions
-                        ? Questionnaire(
-                            selectedQuestion: selectedQuestion,
-                            questions: _questions,
-                            answer: _answer,
+                        ? Stack(
+                            children: [
+                              Questionnaire(
+                                selectedQuestion: selectedQuestion,
+                                questions: _questions,
+                                answer: _answer,
+                              ),
+                              Positioned(
+                                right: 16,
+                                top: 16,
+                                child: Container(
+                                  padding: EdgeInsets.all(8),
+                                  decoration: BoxDecoration(
+                                    color: Colors.black54,
+                                    borderRadius: BorderRadius.circular(8),
+                                  ),
+                                  child: Text(
+                                    "Score: $totalScore/10",
+                                    style: TextStyle(
+                                      color: Colors.white,
+                                      fontSize: 16,
+                                    ),
+                                  ),
+                                ),
+                              ),
+                            ],
                           )
                         : Result(totalScore, _reset);
                   } else {

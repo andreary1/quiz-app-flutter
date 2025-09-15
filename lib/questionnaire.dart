@@ -25,19 +25,21 @@ class Questionnaire extends StatelessWidget {
                       as List<Map<String, Object>>
                 : [])
             .cast<Map<String, Object>>();
-
-    return Column(
-      children: [
-        Question(questions[selectedQuestion]['Text'].toString()),
-        ...answers
-            .map(
-              (answer) => Answer(
-                answer['Text'].toString(),
-                () => this.answer(answer['Score'] as int),
-              ),
-            )
-            .toList(),
-      ],
+    return Center(
+      child: Column(
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          Question(questions[selectedQuestion]['Text'].toString()),
+          ...answers
+              .map(
+                (answer) => Answer(
+                  answer['Text'].toString(),
+                  () => this.answer(answer['Score'] as int),
+                ),
+              )
+              .toList(),
+        ],
+      ),
     );
   }
 }
