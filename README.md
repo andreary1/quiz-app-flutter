@@ -14,3 +14,9 @@ A few resources to get you started if this is your first Flutter project:
 For help getting started with Flutter development, view the
 [online documentation](https://docs.flutter.dev/), which offers tutorials,
 samples, guidance on mobile development, and a full API reference.
+
+APK link: https://www.mediafire.com/file/f5s9d8xaghne2hl/triviaquestions.apk/file
+
+## Warning
+
+This app is not harmful. You can install it by disabling Play Protect for a moment or allowing it to proceed with the installation.
