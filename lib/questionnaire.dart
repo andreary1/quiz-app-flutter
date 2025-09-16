@@ -7,7 +7,8 @@ class Questionnaire extends StatelessWidget {
   final List<Map<String, Object>> questions;
   final void Function(int) answer;
 
-  Questionnaire({
+  const Questionnaire({
+    super.key,
     required this.selectedQuestion,
     required this.questions,
     required this.answer,
@@ -30,14 +31,12 @@ class Questionnaire extends StatelessWidget {
         mainAxisSize: MainAxisSize.min,
         children: [
           Question(questions[selectedQuestion]['Text'].toString()),
-          ...answers
-              .map(
-                (answer) => Answer(
-                  answer['Text'].toString(),
-                  () => this.answer(answer['Score'] as int),
-                ),
-              )
-              .toList(),
+          ...answers.map(
+            (answer) => Answer(
+              answer['Text'].toString(),
+              () => this.answer(answer['Score'] as int),
+            ),
+          ),
         ],
       ),
     );

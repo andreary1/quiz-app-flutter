@@ -16,7 +16,7 @@ class _QuestionAppState extends State<QuestionApp> {
 
   Future<List<Map<String, Object>>> getQuestions(String difficulty) async {
     final url = Uri.parse(
-      'https://opentdb.com/api.php?amount=10&difficulty=${difficulty}',
+      'https://opentdb.com/api.php?amount=10&difficulty=$difficulty',
     );
     final response = await http.get(url);
     if (response.statusCode == 200) {
@@ -57,7 +57,7 @@ class _QuestionAppState extends State<QuestionApp> {
       });
     }
 
-    print("Total Score: ${totalScore}");
+    print("Total Score: $totalScore");
   }
 
   void _selectDifficulty(String difficulty) {
@@ -183,5 +183,8 @@ class _QuestionAppState extends State<QuestionApp> {
 }
 
 class QuestionApp extends StatefulWidget {
+  const QuestionApp({super.key});
+
+  @override
   _QuestionAppState createState() => _QuestionAppState();
 }

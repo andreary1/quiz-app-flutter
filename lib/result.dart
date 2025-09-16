@@ -4,17 +4,17 @@ class Result extends StatelessWidget {
   final int score;
   final void Function()? reset;
 
-  Result(this.score, this.reset);
+  const Result(this.score, this.reset, {super.key});
 
   String get phrase {
     if (score <= 3) {
-      return "Total Score: ${score}/10. You can do better!";
+      return "Total Score: $score/10. You can do better!";
     } else if (score <= 6) {
-      return "Total Score: ${score}/10. You are getting better!";
+      return "Total Score: $score/10. You are getting better!";
     } else if (score <= 9) {
-      return "Total Score: ${score}/10. You are an expert!";
+      return "Total Score: $score/10. You are an expert!";
     } else {
-      return "Total Score: ${score}/10. You are a master!";
+      return "Total Score: $score/10. You are a master!";
     }
   }
 
@@ -26,11 +26,11 @@ class Result extends StatelessWidget {
         Center(child: Text(phrase, style: TextStyle(fontSize: 24))),
         ElevatedButton(
           onPressed: reset,
-          child: Text('Restart Quiz'),
           style: ElevatedButton.styleFrom(
             backgroundColor: Colors.blue,
             foregroundColor: Colors.white,
           ),
+          child: Text('Restart Quiz'),
         ),
       ],
     );
